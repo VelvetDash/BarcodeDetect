@@ -47,23 +47,23 @@ public class HistoryActivity extends AppCompatActivity {
         populateHistory();
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        Log.d("optionsmenu","oncreate");
-//        getMenuInflater().inflate(R.menu.history_options, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        Log.d("optionsmenu","onselect");
-//        switch (item.getItemId()) {
-//            case R.id.clear_history:
-//                clearOrdersFromPref();
-//                break;
-//        }
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Log.d("optionsmenu","oncreate");
+        getMenuInflater().inflate(R.menu.history_options, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Log.d("optionsmenu","onselect");
+        switch (item.getItemId()) {
+            case R.id.history_clear:
+                clearOrdersFromPref();
+                break;
+        }
+        return true;
+    }
 
     private void populateHistory(){
         String[] codes = getOrdersFromPref();
@@ -118,9 +118,9 @@ public class HistoryActivity extends AppCompatActivity {
     private String[] getOrdersFromPref() {
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("barcodedetect", MODE_PRIVATE);
         String json = prefs.getString("history", null);
-        Log.d(TAG,json);
         String[] urls = new String[0];
         if (json != null) {
+            Log.d(TAG,json);
             try {
                 JSONArray allOrders = new JSONArray(json);
                 urls = new String[allOrders.length()];
@@ -134,7 +134,6 @@ public class HistoryActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-        Log.i(TAG, String.valueOf(urls.length));
         return urls;
     }
 
