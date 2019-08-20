@@ -80,3 +80,15 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+#Default generated gitignore
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+

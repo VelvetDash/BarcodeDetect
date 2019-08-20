@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BarcodeDetect</string>
+    <string name="button_text">OK</string>
+    <string name="scan_barcode_button">Press Button To Scan Barcode</string>
+    <string name="no_barcode_captured">No Barcode Captured</string>
+    <string name="low_storage_error">Low Storage</string>
+    <string name="no_camera_permission">No Camera Permission</string>
+    <string name="ok">OK</string>
+    <string name="barcode_error_format">Error code: %s</string>
+    <string name="title_activity_history">HistoryActivity</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
